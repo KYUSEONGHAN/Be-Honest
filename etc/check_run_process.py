@@ -15,16 +15,16 @@ def checkIfProcessRunning(processName: str) -> bool:
 
 def notify_processing_app_name() -> str:
     app_list = [
-        'slack', 'chrome', 'kakaotalk', 'telegram', 'melon', 'youtube',
-        'flo', 'bugs', 'genie', 'youtube music',
+        'slack', 'kakaotalk', 'telegram', 'melon', 'youtube',
+        'flo', 'bugs', 'genie', 'youtube music', 'zoom'
     ]
     message = ''
 
     for app in app_list:
         if checkIfProcessRunning(app):
-            message += f'{app} 어플리케이션이 현재 활성화돼 있습니다.\n'
+            message += f'Please turn off the {app} application.'
 
-    return message if message else '활성화된 어플리케이션이 없습니다.'
+    return message
 
 if __name__ == '__main__':
     print(notify_processing_app_name())
