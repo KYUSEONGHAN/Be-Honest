@@ -150,7 +150,9 @@ def yield_webcam(cap, isVideo, hpd, out):
         bbox, label, conf = cvlib.detect_common_objects(frame)
 
         # print(bbox, label, conf)
+        # print('#' * 25)
         # print(label)  # 웹캠으로 실시간 응시자 화면 객체 인식
+        # print('#' * 25)
 
         # if 'book' in label:
         #     print('#' * 30)

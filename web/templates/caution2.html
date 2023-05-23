@@ -9,6 +9,16 @@
 </head>
 <body>
     <img class="cau" src="../static/img/caupic2.png" width="50%">
-    <a href="http://192.168.0.10:9999/test"><img class="test" src="../static/img/test.png"></a>
+    <!--<a href="http://192.168.0.10:9999/test"><img id="myImage" class="test" src="../static/img/test.png"></a>-->
+    <img id="myImage" class="test" src="../static/img/test.png">
 </body>
+
+<script>
+    // 이미지 클릭 시 이벤트 핸들러
+    document.getElementById("myImage").addEventListener("click", function() {
+        // 현재 위치/caution1 URL로 이동
+        window.location.href = window.location.origin + "/test";
+    });
+</script>
+
 </html>
