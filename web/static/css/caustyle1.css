@@ -1,12 +1,12 @@
 img.cau{
     position: absolute;
-  left: 500px;
-  top: 100px;
+    left: 400px;
+    top: 100px;
 }
 
 img.arrow{
     position: absolute;
-  left: 1310px;
+  left: 950px;
   top: 135px;
   animation: up-down 1.0s infinite ease-in-out alternate;
 }

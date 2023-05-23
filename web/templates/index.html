@@ -4,11 +4,11 @@
 <style>
   img{
   position: absolute;
-  left: 750px;
+  left: 600px;
   top: 300px;
 }
 
-button.TEST{
+  button.TEST{
     width : 200px;
     height : 60px;
     background-color: white;
@@ -53,6 +53,21 @@ button.TEST{
     background-color:rgba(239, 241, 245, 0.9) ;
     cursor:pointer;
   }
+
+  .centered-button {
+    background-color: white;
+    color: #004fff;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    position: fixed;
+    border-color: #004fff;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px; /* 원하는 가로 크기로 조정해주세요 */
+    height: 50px; /* 원하는 세로 크기로 조정해주세요 */
+  }
 </style>
 
 <head>
@@ -62,10 +77,19 @@ button.TEST{
 </head>
 
 <body>
-  <img src="../static/img/mainpic.png" width="23%">
-  <button class="TEST" type = "button" onclick="window.open('http://192.168.0.10:9999//preparations_en')">Test</button>
+  <img src="../static/img/mainpic.png">
+  <!--<button class="TEST" type = "button" onclick="window.open('http://192.168.0.10:9999/preparations')">Test</button>-->
+  <button class="centered-button" type = "button" onclick="openPreparations()">Test Start</button>
   <!--<button class="LOGIN" type = "button" onclick="window.open('https://naver.com')">LOGIN</button>-->
 
 </body>
+
+<script>
+function openPreparations() {
+  var url = window.location.origin + "/preparations";
+  window.open(url, "_blank");
+}
+</script>
+
 
 </html>

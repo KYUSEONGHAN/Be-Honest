@@ -14,23 +14,28 @@ app = Flask(__name__)
 
 @app.route("/")
 def mainpage():
+    print('메인페이지 접속')
     return render_template('index.html')
 
 @app.route("/login")
 def login():
+    print('로그인페이지 접속')
     return render_template('login/login.html')
 
 ################## ko ver
-@app.route("/preparation")
+@app.route("/preparations")
 def preparation():
+    print('준비사항 List 페이지 접속')
     return render_template('Preparation.html')
 
 @app.route("/caution1")
 def caution1():
+    print('첫 번째 유의사항 List 페이지 접속')
     return render_template('caution1.html')
 
 @app.route("/caution2")
 def caution2():
+    print('두 번째 유의사항 List 페이지 접속')
     return render_template('caution2.html')
 
 ################# en ver
@@ -57,15 +62,16 @@ def ai_list2_en():
 # 시험 시작
 @app.route("/test")
 def test():
-    # # 금지 목록중에 속한 어플리케이션이 활성화중이라면
-    # if notify_processing_app_name():
-    #     # 끄라고 웹에서 알림창 띄어줌
-    #     flash(notify_processing_app_name())
-    #     return render_template('precautions2_en.html')
-    # # 외부 기기, 장치 등이 연결된 경우
-    # if check_external_device():
-    #     flash(check_external_device())
-    #     return render_template('precautions2_en.html')
+    # 금지 목록중에 속한 어플리케이션이 활성화중이라면
+    if notify_processing_app_name():
+        # 끄라고 웹에서 알림창 띄어줌
+        flash(notify_processing_app_name())
+        return render_template('precautions2_en.html')
+    # 외부 기기, 장치 등이 연결된 경우
+    if check_external_device():
+        flash(check_external_device())
+        return render_template('precautions2_en.html')
+    print('비대면 화상 시험 시작 >>>>>')
     global cap, isVideo, hps, out
 
     return Response(
